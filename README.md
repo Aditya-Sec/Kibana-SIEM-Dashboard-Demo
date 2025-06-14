@@ -1,40 +1,68 @@
 # Kibana-SIEM-Dashboard-Demo
 Detect brute force login attacks using Kibana with sample Linux logs.
 
-# 📊 Kibana SIEM Dashboard – Brute Force Attack Detection
+# 📊 Kibana SIEM Dashboard Demo: Brute Force Login Detection
 
-This project demonstrates a mini-SOC (Security Operations Center) use case using the ELK stack (Elasticsearch, Logstash, Kibana). It showcases how to detect brute force login attacks using simulated Linux authentication logs and visualize them in Kibana.
-
----
-
-## 🎯 Project Purpose
-
-To simulate real-world brute force attacks and build a dashboard that detects login anomalies such as:
-- Repeated failed login attempts
-- Suspicious IP addresses
-- Geolocation-based login insights
+This project demonstrates how to detect brute force login attempts using Kibana's visualizations and log analysis capabilities.
 
 ---
 
-## 🛠 Tools & Stack
+## 🔍 Detection Logic
 
-- **Kibana** – Log visualization and dashboarding
-- **Elasticsearch** – Indexing and searching log data
-- **Sample Linux Logs** – Simulated `/var/log/auth.log` format
-- *(Optional)* Filebeat/Logstash for ingestion
+The Kibana dashboard identifies:
+
+- 🔁 Repeated login failures from same IPs
+- 🌍 Unusual geo-locations for login attempts
+- 🔐 Accounts targeted most frequently
 
 ---
 
-## 📁 Log Data
+## 📷 Screenshots
 
-File: `sample-logs/linux-auth-failed.csv`
+Located in `dashboard-screenshots/`:
 
-Example data:
-```csv
-timestamp,username,ip_address,status
-2025-06-10 10:22:01,root,192.168.1.10,Failed
-2025-06-10 10:23:45,admin,185.23.121.55,Failed
-2025-06-10 10:24:12,admin,185.23.121.55,Failed
-2025-06-10 10:25:00,admin,185.23.121.55,Failed
-2025-06-10 10:25:22,user1,182.45.17.101,Failed
-2025-06-10 10:25:49,user1,182.45.17.101,Failed
+- `dashboard-overview.png`
+- `failed-logins-visual.png`
+- `geo-map-login-attempts.png`
+
+---
+
+## 📊 Visualizations
+
+- Failed Logins per Username
+- Source IP Location Map
+- Login Status Distribution (Pie chart)
+- Time-Series Failed Attempts
+
+---
+
+## 🧠 What I Learned
+
+- Real-time log parsing with Kibana
+- Index pattern creation
+- Visual correlation between IP, user, and timestamps
+- Foundations of detection engineering for brute force attacks
+
+---
+
+## 🗂 Folder Structure
+Kibana-SIEM-Dashboard-Demo/
+├── README.md
+├── sample-logs/
+│ └── Linux-auth-failed.csv
+├── dashboard-screenshots/
+│ ├── dashboard-overview.png
+│ ├── failed-logins-visual.png
+│ └── geo-map-login-attempts.png
+└── visualizations.json (optional)
+
+
+---
+
+## 🙋 About Me
+
+I’m a SOC Analyst transitioning into Red Teaming, actively building practical projects in log analysis, SIEM, and threat detection using tools like Kibana, Sumo Logic, and AWS CloudTrail.
+
+📨 [Connect with me on LinkedIn]( www.linkedin.com/in/aditya-kumar-goswami)
+
+
